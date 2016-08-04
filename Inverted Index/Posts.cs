@@ -20,5 +20,14 @@ namespace Inverted_Index {
         public void AddPost(int docId, int frequency) {
             posts.TryAdd(docId, frequency);
         }
+
+        public void RemovePost(int id) {
+            int value;
+            posts.TryRemove(id, out value);
+        }
+
+        public bool IsEmpty() {
+            return posts.IsEmpty;
+        }
     }
 }

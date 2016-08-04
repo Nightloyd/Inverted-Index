@@ -22,8 +22,10 @@ namespace Inverted_Index {
                 foreach (KeyValuePair<int, int> post in posts.GetPosts()) {
                     Debug.WriteLine("Indexed String: \"" + docs[post.Key].GetIndexedString() + "\" Frequency of search term: " + post.Value);
                 }
+            } else {
+                Debug.WriteLine("Nothing found : (");
             }
-
+            
 
             return null;
         }
@@ -67,7 +69,22 @@ namespace Inverted_Index {
         }
 
         public void RemoveDoc(int id) {
+            Document doc;
+            if (docs.TryGetValue(id, out doc)) {
+                foreach (String str in doc.GetIndexedString().Split(' ')) {
 
+                    Posts posts;
+                    if (dic.TryGetValue(str, out posts)) {
+                        posts.RemovePost(id);
+
+                        if (posts.IsEmpty()) {
+                            Posts value;
+                            dic.TryRemove(str, out value);
+                        }
+                    }
+
+                }
+            }
         }
     }
 }
