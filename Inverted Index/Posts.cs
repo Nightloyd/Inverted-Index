@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace Inverted_Index {
     class Posts {
-        private ConcurrentDictionary<int, int> posts
-        {
-            get
-            {
-                return posts;
-            }
+        private ConcurrentDictionary<int, int> posts;
+
+        public Posts(int docId, int frequency) {
+            posts = new ConcurrentDictionary<int, int>();
+            AddPost(docId, frequency);
         }
 
-        public void addPost(int docId, int frequency) {
+        public ConcurrentDictionary<int, int> GetPosts() {
+            return posts;
+        }
+
+        public void AddPost(int docId, int frequency) {
             posts.TryAdd(docId, frequency);
         }
     }
