@@ -70,16 +70,16 @@ namespace Inverted_Index {
 
         public void RemoveDoc(int id) {
             Document doc;
-            if (docs.TryGetValue(id, out doc)) {
-                foreach (String str in doc.GetIndexedString().Split(' ')) {
-
+            if (docs.TryGetValue(id, out doc)) { // Gets document of a id.
+                foreach (String str in doc.GetIndexedString().Split(' ')) { // Splits the indexed string in the document.
+                    // Loops through all terms of the document.
                     Posts posts;
-                    if (dic.TryGetValue(str, out posts)) {
-                        posts.RemovePost(id);
+                    if (dic.TryGetValue(str, out posts)) { // Gets the posts of term.
+                        posts.RemovePost(id); // Remove the document from the term.
 
-                        if (posts.IsEmpty()) {
+                        if (posts.IsEmpty()) { // If the term have zero posts,
                             Posts value;
-                            dic.TryRemove(str, out value);
+                            dic.TryRemove(str, out value); // then delete the term from the lexicon.
                         }
                     }
 
