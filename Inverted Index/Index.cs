@@ -16,11 +16,16 @@ namespace Inverted_Index {
             docs = new ConcurrentDictionary<int, Document>();
         }
 
+        private Index(Lexicon lex, ConcurrentDictionary<int, Document> docs) {
+            this.lex = lex;
+            this.docs = docs;
+        }
+
         public List<Object> Search(String query) {
             Posts posts = lex.GetTermPosts(query);
             if (posts != null) {
                 foreach (KeyValuePair<int, int> post in posts.GetPosts()) {
-                    Debug.WriteLine("Indexed String: \"" + docs[post.Key].GetIndexedString() + "\" Frequency of search term: " + post.Value);
+                    Debug.WriteLine("Indexed String: \"" + docs[post.Key].GetIndexedString()[0] + "\" Frequency of search term: " + post.Value);
                 }
             } else {
                 Debug.WriteLine("Nothing found : (");
@@ -76,7 +81,10 @@ namespace Inverted_Index {
         public void SaveIndexToFile(String path) {
             FileHandler.SaveToXML<ConcurrentDictionary<int, Document>>(path, docs);
             FileHandler.SaveToXML<Lexicon>(path, lex);
-            //lex.Save(path);
+        }
+
+        public static Index LoadIndexFromFile(String path) {
+            return new Index(FileHandler.LoadFromXML<Lexicon>(path), FileHandler.LoadFromXML<ConcurrentDictionary<int, Document>>(path));
         }
     }
 }

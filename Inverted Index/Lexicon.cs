@@ -45,9 +45,5 @@ namespace Inverted_Index {
                 }
             }
         }
-
-        public void Save(String path) {
-            FileHandler.SaveToXML<ConcurrentDictionary<String, Posts>>(path, lex);
-        }
     }
 }
