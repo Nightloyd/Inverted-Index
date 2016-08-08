@@ -3,9 +3,12 @@ using System.Collections.Concurrent;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Inverted_Index {
-    class Posts {
+    [DataContract]
+    public class Posts {
+        [DataMember]
         private ConcurrentDictionary<int, int> posts;
 
         public Posts(int docId, int frequency) {

@@ -7,7 +7,7 @@ using System.Collections.Concurrent;
 using System.Diagnostics;
 
 namespace Inverted_Index {
-    class Index {
+    public class Index {
         private Lexicon lex; // Lexicon containing all words in all documents in the index.
         private ConcurrentDictionary<int, Document> docs; // All documents in the index.
 
@@ -29,7 +29,6 @@ namespace Inverted_Index {
             return null;
         }
 
-        // TO-DO: Remove characters such as ., from stringToIndex?
         public int AddDoc(String stringToIndex, Dictionary<String, String> stringsToStore) {
 
             #region Add Document to Document Dictionary
@@ -60,17 +59,24 @@ namespace Inverted_Index {
         }
 
         public void UpdateDoc(int id, String updatedStringToIndex, Dictionary<String, String> updatedStringsToStore) {
-
+            RemoveDoc(id);
+            AddDoc(updatedStringToIndex, updatedStringsToStore);
         }
 
         public void RemoveDoc(int id) {
             Document doc;
             if (docs.TryGetValue(id, out doc)) { // Gets document of a id.
-                foreach (String term in doc.GetIndexedString().Split(' ')) { // Splits the indexed string from the document.
+                foreach (String term in doc.GetIndexedString()) { // Splits the indexed string from the document.
                     // Loops through all terms of the document.
                     lex.RemovePost(term, id);
                 }
             }
+        }
+
+        public void SaveIndexToFile(String path) {
+            FileHandler.SaveToXML<ConcurrentDictionary<int, Document>>(path, docs);
+            FileHandler.SaveToXML<Lexicon>(path, lex);
+            //lex.Save(path);
         }
     }
 }

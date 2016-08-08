@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Inverted_Index {
-    class Document {
-        private readonly String indexedString;
+    [DataContract]
+    public class Document {
+        //private readonly String indexedString;
+        [DataMember]
+        private readonly String[] indexedString;
+        [DataMember]
         private readonly Dictionary<String, String> storedStrings;
 
         public Document(String indexedString, Dictionary<String, String> storedStrings) {
-            this.indexedString = indexedString;
+            this.indexedString = indexedString.Split(' ');
+            //this.indexedString = indexedString;
             this.storedStrings = storedStrings;
         }
 
-        public String GetIndexedString() {
+        public String[] GetIndexedString() {
             return indexedString;
         }
 
