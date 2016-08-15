@@ -49,6 +49,7 @@
     <Compile Include="FileHandler.cs" />
     <Compile Include="Index.cs" />
     <Compile Include="Lexicon.cs" />
+    <Compile Include="NormalQuery.cs" />
     <Compile Include="Posts.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

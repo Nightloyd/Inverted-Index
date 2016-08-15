@@ -13,8 +13,8 @@ namespace Inverted_Index {
             Index index = new Inverted_Index.Index();
             
             Dictionary<String, String> stringsToStore = new Dictionary<string, string>();
-            int id = index.AddDoc("Carrots should be orange and bananas should be yellow", stringsToStore);
-            id = index.AddDoc("Testing the index should work", stringsToStore);
+            bool success = index.AddDoc("1", "Carrots should be orange and bananas should be yellow", stringsToStore);
+            success = index.AddDoc("2", "Testing the index should work", stringsToStore);
             index.Search("should");
             //index.RemoveDoc(id);
             index.Search("should");

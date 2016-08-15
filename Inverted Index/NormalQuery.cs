@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inverted_Index {
-    class Query {
+namespace Inverted_Index
+{
+    class NormalQuery : Query {
 
     }
 }

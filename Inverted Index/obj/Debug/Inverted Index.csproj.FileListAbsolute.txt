@@ -4,3 +4,9 @@ E:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index\bi
 E:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index\obj\Debug\Inverted Index.csprojResolveAssemblyReference.cache
 E:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index\obj\Debug\Inverted Index.exe
 E:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index\obj\Debug\Inverted Index.pdb
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index\bin\Debug\Inverted Index.exe.config
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index\obj\Debug\Inverted Index.exe
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index\obj\Debug\Inverted Index.pdb
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index\bin\Debug\Inverted Index.exe
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index\bin\Debug\Inverted Index.pdb
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index\obj\Debug\Inverted Index.csprojResolveAssemblyReference.cache

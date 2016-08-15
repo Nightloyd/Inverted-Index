@@ -26,7 +26,7 @@ namespace Inverted_Index {
 
         }
 
-        public void AddPost(String term, int docId, int docFrequency) {
+        public void AddPost(String term, String docId, int docFrequency) {
             if (lex.ContainsKey(term)) { // If term already exist
                 lex[term].AddPost(docId, docFrequency); // add document id and frequency to the list of posts.
             } else {
@@ -34,10 +34,10 @@ namespace Inverted_Index {
             }
         }
 
-        public void RemovePost(String term, int docId) {
+        public void RemovePost(String term, String docKey) {
             Posts posts;
             if (lex.TryGetValue(term, out posts)) { // Gets the posts of term.
-                posts.RemovePost(docId); // Remove the document from the term.
+                posts.RemovePost(docKey); // Remove the document from the term.
 
                 if (posts.IsEmpty()) { // If the term have zero posts,
                     Posts value;
