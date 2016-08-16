@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inverted_Index
 {
-    class NormalQuery : Query {
-
+    interface DataContextInterface {
+        
     }
 }

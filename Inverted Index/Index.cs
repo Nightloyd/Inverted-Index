@@ -21,17 +21,25 @@ namespace Inverted_Index {
             this.docs = docs;
         }
 
-        public List<Object> Search(String query) {
-            Posts posts = lex.GetTermPosts(query);
+        public List<Document> Search(Query query) {
+            /*Posts posts = lex.GetTermPosts(query); // Retrieves all posts from a given term.
+            List<Document> returnDocuments = new List<Document>();
             if (posts != null) {
                 foreach (KeyValuePair<String, int> post in posts.GetPosts()) {
                     Debug.WriteLine("Indexed String: \"" + docs[post.Key].GetIndexedString()[0] + "\" Frequency of search term: " + post.Value);
+                    Document doc;
+                    if (docs.TryGetValue(post.Key, out doc)) { // Retrives the Document for given post
+                        returnDocuments.Add(doc); // and adds it to the List to return.
+                    }
                 }
             } else {
                 Debug.WriteLine("Nothing found : (");
             }
 
-            return null;
+
+
+            return returnDocuments;*/
+            return query.Search(lex, docs);
         }
 
         public bool AddDoc(String key, String stringToIndex, Dictionary<String, String> stringsToStore) {

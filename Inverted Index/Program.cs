@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 
 namespace Inverted_Index {
     class Program {
@@ -15,11 +16,13 @@ namespace Inverted_Index {
             Dictionary<String, String> stringsToStore = new Dictionary<string, string>();
             bool success = index.AddDoc("1", "Carrots should be orange and bananas should be yellow", stringsToStore);
             success = index.AddDoc("2", "Testing the index should work", stringsToStore);
-            index.Search("should");
+            //index.Search(new SingleTermQuery("should"));
+            Debug.WriteLine(index.Search(new SingleTermQuery("should")).Count);
             //index.RemoveDoc(id);
-            index.Search("should");
-            
-            index.Search("index");
+            Debug.WriteLine(index.Search(new SingleTermQuery("should")).Count);
+
+            Debug.WriteLine(index.Search(new SingleTermQuery("index")).Count);
+            Debug.WriteLine(index.Search(new SingleTermQuery("no")).Count);
             //index.SaveIndexToFile("E:\\");
 
 
