@@ -17,12 +17,12 @@ namespace Inverted_Index {
             bool success = index.AddDoc("1", "Carrots should be orange and bananas should be yellow", stringsToStore);
             success = index.AddDoc("2", "Testing the index should work", stringsToStore);
             //index.Search(new SingleTermQuery("should"));
-            Debug.WriteLine(index.Search(new SingleTermQuery("should")).Count);
+            Debug.WriteLine(index.Search(new SingleTermQuery("should"))[0].GetIndexedString()[0]);
             //index.RemoveDoc(id);
-            Debug.WriteLine(index.Search(new SingleTermQuery("should")).Count);
+            Debug.WriteLine(index.Search(new SingleTermQuery("should"))[1].GetIndexedString()[0]);
 
-            Debug.WriteLine(index.Search(new SingleTermQuery("index")).Count);
-            Debug.WriteLine(index.Search(new SingleTermQuery("no")).Count);
+            Debug.WriteLine(index.Search(new SingleTermQuery("index"))[0].GetIndexedString()[0]);
+            //Debug.WriteLine(index.Search(new SingleTermQuery("no")).Count);
             //index.SaveIndexToFile("E:\\");
 
 
