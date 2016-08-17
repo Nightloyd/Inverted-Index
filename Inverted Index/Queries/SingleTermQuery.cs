@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace Inverted_Index {
     public class SingleTermQuery : Query {
-        private String searchString;
+        private String searchTerm;
 
-        public SingleTermQuery(String searchString) {
-            this.searchString = searchString;
+        public SingleTermQuery(String searchTerm) {
+            this.searchTerm = searchTerm.ToLower();
         }
 
         public List<Document> Search(Lexicon lex, ConcurrentDictionary<String, Document> docs) {
-            Posts posts = lex.GetTermPosts(searchString); // Retrieves all posts from a given term.
+            Posts posts = lex.GetTermPosts(searchTerm); // Retrieves all posts from a given term.
             List<Document> returnDocuments = new List<Document>();
             if (posts != null) {
                 var sortedList = posts.GetPosts().ToList();

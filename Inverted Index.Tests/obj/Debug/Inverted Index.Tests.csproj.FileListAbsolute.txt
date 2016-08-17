@@ -1,0 +1,8 @@
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index.Tests\bin\Debug\Inverted Index.Tests.dll
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index.Tests\bin\Debug\Inverted Index.Tests.pdb
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index.Tests\bin\Debug\Inverted Index.exe
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index.Tests\bin\Debug\Inverted Index.pdb
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index.Tests\obj\Debug\Inverted Index.Tests.csprojResolveAssemblyReference.cache
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index.Tests\obj\Debug\Inverted Index.Tests.dll
+D:\Dropbox\Programmering\Program\Inverted Index\Inverted Index\Inverted Index.Tests\obj\Debug\Inverted Index.Tests.pdb
