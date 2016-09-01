@@ -28,9 +28,10 @@ namespace Inverted_Index {
         public bool AddDoc(String key, String stringToIndex, Dictionary<String, String> stringsToStore) {
 
             if (!docs.ContainsKey(key)) {
-                #region Add Document to Document Dictionary
-
+                
                 String stringToIndexLowerCase = stringToIndex.ToLower();
+
+                #region Add Document to Document Dictionary
                 Document doc = new Document(stringToIndexLowerCase, new Dictionary<string, string>(stringsToStore));
                 //int docPosition = docs.Count;
                 docs.TryAdd(key, doc);
@@ -71,12 +72,13 @@ namespace Inverted_Index {
 
         public void RemoveDoc(String key) {
             Document doc;
-            if (docs.TryGetValue(key, out doc)) { // Gets document of a id.
+            if (docs.TryRemove(key, out doc)) { // Gets document of a id.
                 foreach (String term in doc.GetIndexedString()) { // Splits the indexed string from the document.
                     // Loops through all terms of the document.
                     lex.RemovePost(term, key);
                 }
             }
+            
         }
 
         public int GetNoOfDocuments() {

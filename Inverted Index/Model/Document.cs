@@ -27,5 +27,11 @@ namespace Inverted_Index {
         public Dictionary<String, String> GetStoredStrings() {
             return storedStrings;
         }
+
+        public String Get(String name) {
+            String value;
+            storedStrings.TryGetValue(name, out value);
+            return value;
+        }
     }
 }
